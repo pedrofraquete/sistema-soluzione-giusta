@@ -29,46 +29,9 @@ export default function PontoDigital() {
       window.location.href = routes[module]
     }
   };
+  
   const [currentDate, setCurrentDate] = useState('');
-
-  const handleNavigation = (module: string) => {
-    const routes: { [key: string]: string } = {
-      'Dashboard': '/dashboard',
-      'Funcionários': '/funcionarios',
-      'Projetos': '/projetos',
-      'Financeiro': '/financeiro',
-      'Chat': '/chat',
-      'Ponto Digital': '/ponto',
-      'Documentos': '/documentos',
-      'Relatórios': '/relatorios',
-      'Gamificação': '/gamificacao',
-      'Configurações': '/configuracoes'
-    }
-    
-    if (routes[module]) {
-      window.location.href = routes[module]
-    }
-  };
   const [currentStatus, setCurrentStatus] = useState<'working' | 'break' | 'out'>('working');
-
-  const handleNavigation = (module: string) => {
-    const routes: { [key: string]: string } = {
-      'Dashboard': '/dashboard',
-      'Funcionários': '/funcionarios',
-      'Projetos': '/projetos',
-      'Financeiro': '/financeiro',
-      'Chat': '/chat',
-      'Ponto Digital': '/ponto',
-      'Documentos': '/documentos',
-      'Relatórios': '/relatorios',
-      'Gamificação': '/gamificacao',
-      'Configurações': '/configuracoes'
-    }
-    
-    if (routes[module]) {
-      window.location.href = routes[module]
-    }
-  };
   const [entries, setEntries] = useState<PunchEntry[]>([
     { type: 'in', label: 'Entrada', time: '08:00:00' },
     { type: 'break', label: 'Pausa Almoço', time: '12:00:00' },
