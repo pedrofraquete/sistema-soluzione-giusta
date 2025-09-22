@@ -63,8 +63,19 @@ export default function DashboardPage() {
   }
 
   const handleNavigation = (module: string) => {
-    if (module === 'Funcionários') {
-      window.location.href = '/funcionarios'
+    const routes: { [key: string]: string } = {
+      'Dashboard': '/dashboard',
+      'Funcionários': '/funcionarios',
+      'Projetos': '/projetos',
+      'Financeiro': '/financeiro',
+      'Chat': '/chat',
+      'Ponto Digital': '/ponto',
+      'Documentos': '/documentos',
+      'Relatórios': '/relatorios'
+    }
+    
+    if (routes[module]) {
+      window.location.href = routes[module]
     } else {
       showNotification(`Navegando para: ${module}`, 'info')
     }

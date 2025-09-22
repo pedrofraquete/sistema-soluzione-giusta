@@ -1,9 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Otimizações para Vercel
-  experimental: {
-    serverComponentsExternalPackages: ['@supabase/supabase-js']
-  },
+  // Configurações atualizadas para Next.js 15
+  serverExternalPackages: ['@supabase/supabase-js'],
   
   // Configurações de build
   typescript: {
@@ -13,9 +11,6 @@ const nextConfig = {
   eslint: {
     ignoreDuringBuilds: false,
   },
-
-  // Otimizações de performance
-  swcMinify: true,
   
   // Configurações de imagem
   images: {
