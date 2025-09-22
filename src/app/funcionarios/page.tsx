@@ -28,93 +28,23 @@ export default function FuncionariosPage() {
     onlineStatus: string
   }
 
-  // Dados dos funcionários
-  const employees = [
-    {
-      id: 1,
-      fullName: 'Pedro Fraquete',
-      email: 'pedro@soluzionegiusta.com.br',
-      phone: '(11) 99999-9999',
-      position: 'CEO & Founder',
-      department: 'Diretoria',
-      company: 'soluzione-giusta',
-      salary: 25000,
-      hireDate: '2020-01-01',
-      status: 'ativo',
-      avatar: 'PF',
-      onlineStatus: 'online'
-    },
-    {
-      id: 2,
-      fullName: 'João Marcos',
-      email: 'joao@soluzionegiusta.com.br',
-      phone: '(11) 98765-4321',
-      position: 'Desenvolvedor Full Stack',
-      department: 'Tecnologia',
-      company: 'sg-tech',
-      salary: 8500,
-      hireDate: '2021-03-15',
-      status: 'ativo',
-      avatar: 'JM',
-      onlineStatus: 'online'
-    },
-    {
-      id: 3,
-      fullName: 'Mariana Costa',
-      email: 'mariana@soluzionegiusta.com.br',
-      phone: '(11) 98765-4322',
-      position: 'Gerente de Marketing',
-      department: 'Marketing',
-      company: 'sg-marketing',
-      salary: 9200,
-      hireDate: '2021-06-20',
-      status: 'ativo',
-      avatar: 'MC',
-      onlineStatus: 'away'
-    },
-    {
-      id: 4,
-      fullName: 'Roberto Ferreira',
-      email: 'roberto@soluzionegiusta.com.br',
-      phone: '(11) 98765-4323',
-      position: 'Contador',
-      department: 'Financeiro',
-      company: 'soluzione-giusta',
-      salary: 7800,
-      hireDate: '2020-11-10',
-      status: 'ativo',
-      avatar: 'RF',
-      onlineStatus: 'online'
-    },
-    {
-      id: 5,
-      fullName: 'Ana Silva',
-      email: 'ana@soluzionegiusta.com.br',
-      phone: '(11) 98765-4324',
-      position: 'Designer UX/UI',
-      department: 'Tecnologia',
-      company: 'sg-tech',
-      salary: 7200,
-      hireDate: '2021-08-05',
-      status: 'ativo',
-      avatar: 'AS',
-      onlineStatus: 'online'
-    },
-    {
-      id: 6,
-      fullName: 'Carlos Mendes',
-      email: 'carlos@soluzionegiusta.com.br',
-      phone: '(11) 98765-4325',
-      position: 'Analista de Vendas',
-      department: 'Vendas',
-      company: 'sg-vendas',
-      salary: 6500,
-      hireDate: '2022-02-14',
-      status: 'ferias',
-      avatar: 'CM',
-      onlineStatus: 'offline'
+  // Dados dos funcionários - conectar com API real do Supabase
+  const [employees, setEmployees] = useState<Employee[]>([])
+
+  // Carregar funcionários do Supabase
+  useEffect(() => {
+    const loadEmployees = async () => {
+      try {
+        // TODO: Implementar chamada para API do Supabase
+        // const data = await employeesAPI.getAll()
+        // setEmployees(data)
+        console.log('Carregando funcionários do Supabase...')
+      } catch (error) {
+        console.error('Erro ao carregar funcionários:', error)
+      }
     }
-  ]
+    loadEmployees()
+  }, [])
 
   useEffect(() => {
     // Adicionar Font Awesome

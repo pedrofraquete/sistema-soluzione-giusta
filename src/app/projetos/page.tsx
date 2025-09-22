@@ -68,143 +68,29 @@ export default function ProjectsPage() {
     }
   }, [])
 
-  const loadProjects = () => {
-    const mockProjects = [
-      {
-        id: 1,
-        name: 'Sistema ERP Journey 100k',
-        company: 'soluzione-giusta',
-        manager: 'Pedro Fraquete',
-        status: 'progress',
-        progress: 75,
-        startDate: '2024-01-15',
-        endDate: '2024-03-30',
-        priority: 'high',
-        description: 'Desenvolvimento completo do sistema ERP para gestão empresarial'
-      },
-      {
-        id: 2,
-        name: 'Campanha Digital Inovativa',
-        company: 'innovativa-comunicazione',
-        manager: 'Caroline Lanzilotti',
-        status: 'review',
-        progress: 90,
-        startDate: '2024-02-01',
-        endDate: '2024-02-28',
-        priority: 'high',
-        description: 'Campanha de marketing digital para novos clientes'
-      },
-      {
-        id: 3,
-        name: 'Portal Disbrigo Digital',
-        company: 'disbrigo-facile',
-        manager: 'André Luiz',
-        status: 'progress',
-        progress: 60,
-        startDate: '2024-01-20',
-        endDate: '2024-04-15',
-        priority: 'medium',
-        description: 'Portal online para serviços de despachante'
-      },
-      {
-        id: 4,
-        name: 'App Mavie Saúde',
-        company: 'mavie',
-        manager: 'Camila Mantovani',
-        status: 'todo',
-        progress: 25,
-        startDate: '2024-03-01',
-        endDate: '2024-06-30',
-        priority: 'medium',
-        description: 'Aplicativo mobile para gestão de saúde'
-      }
-    ]
-    // setProjects(mockProjects) - removido pois não está sendo usado
+  const loadProjects = async () => {
+    try {
+      // TODO: Implementar chamada para API do Supabase
+      // const data = await projectsAPI.getAll()
+      // setProjects(data)
+      console.log('Carregando projetos do Supabase...')
+    } catch (error) {
+      console.error('Erro ao carregar projetos:', error)
+    }
   }
 
-  const loadTasks = () => {
-    const mockTasks = [
-      {
-        id: 1,
-        title: 'Implementar Dashboard Principal',
-        project: 'Sistema ERP Journey 100k',
-        company: 'soluzione-giusta',
-        assignee: 'Pedro Fraquete',
-        status: 'progress',
-        priority: 'high',
-        progress: 80,
-        dueDate: '2024-02-15',
-        description: 'Criar dashboard com métricas e estatísticas em tempo real',
-        tags: ['frontend', 'dashboard']
-      },
-      {
-        id: 2,
-        title: 'API de Autenticação',
-        project: 'Sistema ERP Journey 100k',
-        company: 'soluzione-giusta',
-        assignee: 'André Luiz',
-        status: 'done',
-        priority: 'high',
-        progress: 100,
-        dueDate: '2024-01-30',
-        description: 'Sistema completo de login e autenticação',
-        tags: ['backend', 'auth']
-      },
-      {
-        id: 3,
-        title: 'Design System Components',
-        project: 'Sistema ERP Journey 100k',
-        company: 'soluzione-giusta',
-        assignee: 'Caroline Lanzilotti',
-        status: 'review',
-        priority: 'medium',
-        progress: 95,
-        dueDate: '2024-02-10',
-        description: 'Componentes reutilizáveis do design system',
-        tags: ['design', 'components']
-      },
-      {
-        id: 4,
-        title: 'Módulo Financeiro',
-        project: 'Sistema ERP Journey 100k',
-        company: 'soluzione-giusta',
-        assignee: 'Camila Mantovani',
-        status: 'progress',
-        priority: 'high',
-        progress: 70,
-        dueDate: '2024-02-20',
-        description: 'Gestão completa de receitas e despesas',
-        tags: ['frontend', 'financeiro']
-      },
-      {
-        id: 5,
-        title: 'Estratégia de Conteúdo',
-        project: 'Campanha Digital Inovativa',
-        company: 'innovativa-comunicazione',
-        assignee: 'Caroline Lanzilotti',
-        status: 'review',
-        priority: 'high',
-        progress: 90,
-        dueDate: '2024-02-25',
-        description: 'Planejamento de conteúdo para redes sociais',
-        tags: ['marketing', 'conteudo']
-      },
-      {
-        id: 6,
-        title: 'Portal Frontend',
-        project: 'Portal Disbrigo Digital',
-        company: 'disbrigo-facile',
-        assignee: 'Leonardo',
-        status: 'todo',
-        priority: 'medium',
-        progress: 30,
-        dueDate: '2024-03-15',
-        description: 'Interface do usuário do portal',
-        tags: ['frontend', 'portal']
-      }
-    ]
-    setTasks(mockTasks)
-    setFilteredTasks(mockTasks)
+  const loadTasks = async () => {
+    try {
+      // TODO: Implementar chamada para API do Supabase
+      // const data = await projectsAPI.getTasks()
+      // setTasks(data)
+      // setFilteredTasks(data)
+      console.log('Carregando tarefas do Supabase...')
+      setTasks([])
+      setFilteredTasks([])
+    } catch (error) {
+      console.error('Erro ao carregar tarefas:', error)
+    }
   }
 
   const toggleSidebar = () => {

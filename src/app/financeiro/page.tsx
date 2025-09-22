@@ -159,58 +159,17 @@ export default function FinanceiroPage() {
     if (cards[3]) cards[3].textContent = data.pending
   }
 
-  const loadTransactions = () => {
-    const transactions = [
-      {
-        id: 1,
-        type: 'income',
-        title: 'Pagamento Cliente ABC',
-        subtitle: 'Projeto Sistema ERP',
-        amount: 'R$ 45.000,00',
-        date: '22/09/2024',
-        company: 'sg-tech'
-      },
-      {
-        id: 2,
-        type: 'expense',
-        title: 'Salários Setembro',
-        subtitle: 'Folha de pagamento',
-        amount: 'R$ 187.320,00',
-        date: '20/09/2024',
-        company: 'all'
-      },
-      {
-        id: 3,
-        type: 'income',
-        title: 'Consultoria Estratégica',
-        subtitle: 'Empresa XYZ',
-        amount: 'R$ 25.000,00',
-        date: '19/09/2024',
-        company: 'sg-consultoria'
-      },
-      {
-        id: 4,
-        type: 'expense',
-        title: 'Aluguel Escritório',
-        subtitle: 'Setembro 2024',
-        amount: 'R$ 12.500,00',
-        date: '18/09/2024',
-        company: 'soluzione-giusta'
-      },
-      {
-        id: 5,
-        type: 'pending',
-        title: 'Fatura Fornecedor DEF',
-        subtitle: 'Vencimento: 25/09',
-        amount: 'R$ 8.750,00',
-        date: '15/09/2024',
-        company: 'sg-marketing'
-      }
-    ]
-
-    const filteredTransactions = currentFilter === 'all' 
-      ? transactions 
-      : transactions.filter(t => t.type === currentFilter)
+  const loadTransactions = async () => {
+    try {
+      // TODO: Implementar chamada para API do Supabase
+      // const data = await financialAPI.getTransactions()
+      // const transactions = data || []
+      const transactions: any[] = []
+      console.log('Carregando transações do Supabase...')
+      
+      const filteredTransactions = currentFilter === 'all' 
+        ? transactions 
+        : transactions.filter((t: any) => t.type === currentFilter)
 
     const transactionsList = document.getElementById('transactionsList')
     if (transactionsList) {
@@ -231,6 +190,9 @@ export default function FinanceiroPage() {
           </div>
         </div>
       `).join('')
+    }
+    } catch (error) {
+      console.error('Erro ao carregar transações:', error)
     }
   }
 
@@ -282,6 +244,9 @@ export default function FinanceiroPage() {
           </div>
         </div>
       `).join('')
+    }
+    } catch (error) {
+      console.error('Erro ao carregar transações:', error)
     }
   }
 

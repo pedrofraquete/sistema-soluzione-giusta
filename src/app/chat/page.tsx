@@ -65,103 +65,15 @@ export default function ChatPage() {
     type: string
   }
 
-  const employees: Employee[] = [
-    {
-      id: 'pedro',
-      name: 'Pedro Fraquete',
-      avatar: 'PF',
-      position: 'CEO',
-      company: 'Soluzione Giusta',
-      status: 'online',
-      lastSeen: new Date()
-    },
-    {
-      id: 'andre',
-      name: 'André Luiz Fernandes',
-      avatar: 'AF',
-      position: 'Desenvolvedor Sênior',
-      company: 'Soluzione Giusta',
-      status: 'online',
-      lastSeen: new Date(Date.now() - 5 * 60000)
-    },
-    {
-      id: 'caroline',
-      name: 'Caroline Lanzilotti',
-      avatar: 'CS',
-      position: 'Analista Marketing',
-      company: 'Innovativa',
-      status: 'away',
-      lastSeen: new Date(Date.now() - 15 * 60000)
-    },
-    {
-      id: 'renata',
-      name: 'Renata Bariani',
-      avatar: 'RB',
-      position: 'Financeiro & RH',
-      company: 'Soluzione Giusta',
-      status: 'online',
-      lastSeen: new Date(Date.now() - 1 * 60000)
-    }
-  ]
+  // TODO: Conectar com API real do Supabase
+  const [employees, setEmployees] = useState<Employee[]>([])
 
-  const channels: Channel[] = [
-    {
-      id: 'geral',
-      name: '🏢 Geral',
-      description: 'Canal principal do grupo',
-      type: 'public',
-      members: employees.length,
-      icon: 'fas fa-users'
-    },
-    {
-      id: 'tech-team',
-      name: '💻 Tech Team',
-      description: 'Equipe de desenvolvimento',
-      type: 'department',
-      members: 6,
-      icon: 'fas fa-code'
-    }
-  ]
+  // TODO: Conectar com API real do Supabase
+  const [channels, setChannels] = useState<Channel[]>([])
+  const [conversations, setConversations] = useState<Conversation[]>([])
 
-  const [conversations, setConversations] = useState<Conversation[]>([
-    {
-      id: 'conv-andre',
-      type: 'direct',
-      participant: employees.find(e => e.id === 'andre'),
-      lastMessage: 'O módulo de projetos ficou excelente! Vamos fazer deploy?',
-      lastTime: new Date(Date.now() - 5 * 60000),
-      unread: 2,
-      isActive: false
-    },
-    {
-      id: 'conv-renata',
-      type: 'direct',
-      participant: employees.find(e => e.id === 'renata'),
-      lastMessage: 'Pedro, preciso falar sobre o relatório financeiro',
-      lastTime: new Date(Date.now() - 15 * 60000),
-      unread: 0,
-      isActive: false
-    }
-  ])
+  const [messages, setMessages] = useState<Record<string, Message[]>>({})
 
-  const [messages, setMessages] = useState<Record<string, Message[]>>({
-    'conv-andre': [
-      {
-        id: 1,
-        sender: 'andre',
-        content: 'Pedro, terminei de implementar o sistema Kanban no módulo de projetos!',
-        time: new Date(Date.now() - 25 * 60000),
-        type: 'text'
-      },
-      {
-        id: 2,
-        sender: 'pedro',
-        content: 'Fantástico André! Como ficou o drag and drop?',
-        time: new Date(Date.now() - 20 * 60000),
-        type: 'text'
-      }
-    ]
-  })
 
   const currentUser = 'pedro'
 
