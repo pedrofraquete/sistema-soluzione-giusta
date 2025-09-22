@@ -41,10 +41,20 @@ export default function FinanceiroPage() {
   }
 
   const handleNavigation = (module: string) => {
-    if (module === 'Dashboard') {
-      window.location.href = '/dashboard'
-    } else if (module === 'Funcionários') {
-      window.location.href = '/funcionarios'
+    const routes: { [key: string]: string } = {
+      'Dashboard': '/dashboard',
+      'Funcionários': '/funcionarios',
+      'Projetos': '/projetos',
+      'Financeiro': '/financeiro',
+      'Chat': '/chat',
+      'Ponto Digital': '/ponto',
+      'Documentos': '/documentos',
+      'Relatórios': '/relatorios',
+      'Gamificação': '/gamificacao'
+    }
+    
+    if (routes[module]) {
+      window.location.href = routes[module]
     } else {
       alert(`Navegando para: ${module}\n\n(Em desenvolvimento)`)
     }

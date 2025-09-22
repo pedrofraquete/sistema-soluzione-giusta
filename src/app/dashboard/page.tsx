@@ -71,7 +71,8 @@ export default function DashboardPage() {
       'Chat': '/chat',
       'Ponto Digital': '/ponto',
       'Documentos': '/documentos',
-      'Relatórios': '/relatorios'
+      'Relatórios': '/relatorios',
+      'Gamificação': '/gamificacao'
     }
     
     if (routes[module]) {
