@@ -1,9 +1,14 @@
 {
   "version": 2,
   "name": "sistema-soluzione-giusta",
+  "framework": "nextjs",
+  "functions": {
+    "src/app/**/*.{js,ts,tsx}": {
+      "maxDuration": 10
+    }
+  },
   "env": {
     "NEXT_PUBLIC_SUPABASE_URL": "https://ulthrzqgvobultkxlruk.supabase.co",
-    "NEXT_PUBLIC_SUPABASE_ANON_KEY": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVsdGhyenFndm9idWx0a3hscnVrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTc3ODgxMjIsImV4cCI6MjA3MzM2NDEyMn0._T8ExHioHOIpGXFAtxfefglbIIWEwyzH8Eryv7vVf84",
-    "SUPABASE_SERVICE_ROLE_KEY": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVsdGhyenFndm9idWx0a3hscnVrIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc1Nzc4ODEyMiwiZXhwIjoyMDczMzY0MTIyfQ.NNDYyU8XLqRNWY8vuial2-w_WSKn0efG4Ndz2QMxbzE"
+    "NEXT_PUBLIC_SUPABASE_ANON_KEY": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVsdGhyenFndm9idWx0a3hscnVrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTc3ODgxMjIsImV4cCI6MjA3MzM2NDEyMn0._T8ExHioHOIpGXFAtxfefglbIIWEwyzH8Eryv7vVf84"
   }
 }
