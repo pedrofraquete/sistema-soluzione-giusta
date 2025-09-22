@@ -621,7 +621,7 @@ export default function DashboardPage() {
               </div>
             </li>
             <li className="nav-item">
-              <div className="nav-link" onClick={() => handleNavigation('Documentos')}>
+              <div className="nav-link" onClick={() => window.location.href = '/documentos'}>
                 <i className="fas fa-file-alt"></i>
                 <span>Documentos</span>
               </div>
