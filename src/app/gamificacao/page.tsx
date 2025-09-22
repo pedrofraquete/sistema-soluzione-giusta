@@ -397,7 +397,7 @@ export default function GamificacaoPage() {
         
         <ul style={{ listStyle: 'none', padding: '0 15px' }}>
           <li style={{ marginBottom: '8px' }}>
-            <div onClick={() => window.location.href = '/dashboard'} style={{
+            <div onClick={() => handleNavigation('Dashboard')} style={{
               display: 'flex',
               alignItems: 'center',
               padding: '15px',
@@ -412,7 +412,7 @@ export default function GamificacaoPage() {
             </div>
           </li>
           <li style={{ marginBottom: '8px' }}>
-            <div onClick={() => window.location.href = '/funcionarios'} style={{
+            <div onClick={() => handleNavigation('Funcionários')} style={{
               display: 'flex',
               alignItems: 'center',
               padding: '15px',
@@ -427,7 +427,7 @@ export default function GamificacaoPage() {
             </div>
           </li>
           <li style={{ marginBottom: '8px' }}>
-            <div onClick={() => window.location.href = '/projetos'} style={{
+            <div onClick={() => handleNavigation('Projetos')} style={{
               display: 'flex',
               alignItems: 'center',
               padding: '15px',
@@ -442,7 +442,7 @@ export default function GamificacaoPage() {
             </div>
           </li>
           <li style={{ marginBottom: '8px' }}>
-            <div onClick={() => window.location.href = '/financeiro'} style={{
+            <div onClick={() => handleNavigation('Financeiro')} style={{
               display: 'flex',
               alignItems: 'center',
               padding: '15px',
@@ -468,7 +468,7 @@ export default function GamificacaoPage() {
             </div>
           </li>
           <li style={{ marginBottom: '8px' }}>
-            <div onClick={() => window.location.href = '/chat'} style={{
+            <div onClick={() => handleNavigation('Chat')} style={{
               display: 'flex',
               alignItems: 'center',
               padding: '15px',
@@ -494,7 +494,7 @@ export default function GamificacaoPage() {
             </div>
           </li>
           <li style={{ marginBottom: '8px' }}>
-            <div onClick={() => window.location.href = '/ponto'} style={{
+            <div onClick={() => handleNavigation('Ponto Digital')} style={{
               display: 'flex',
               alignItems: 'center',
               padding: '15px',
@@ -509,7 +509,7 @@ export default function GamificacaoPage() {
             </div>
           </li>
           <li style={{ marginBottom: '8px' }}>
-            <div onClick={() => window.location.href = '/documentos'} style={{
+            <div onClick={() => handleNavigation('Documentos')} style={{
               display: 'flex',
               alignItems: 'center',
               padding: '15px',
@@ -524,7 +524,7 @@ export default function GamificacaoPage() {
             </div>
           </li>
           <li style={{ marginBottom: '8px' }}>
-            <div onClick={() => window.location.href = '/relatorios'} style={{
+            <div onClick={() => handleNavigation('Relatórios')} style={{
               display: 'flex',
               alignItems: 'center',
               padding: '15px',
@@ -552,6 +552,21 @@ export default function GamificacaoPage() {
             }}>
               <i className="fas fa-trophy" style={{ fontSize: '1.2rem', marginRight: '15px', minWidth: '20px', textAlign: 'center' }}></i>
               {!sidebarCollapsed && <span>Gamificação</span>}
+            </div>
+          </li>
+          <li style={{ marginBottom: '8px' }}>
+            <div onClick={() => handleNavigation('Configurações')} style={{
+              display: 'flex',
+              alignItems: 'center',
+              padding: '15px',
+              color: 'rgba(255,255,255,0.8)',
+              borderRadius: '12px',
+              cursor: 'pointer',
+              fontWeight: 500,
+              transition: 'all 0.3s ease'
+            }}>
+              <i className="fas fa-cog" style={{ fontSize: '1.2rem', marginRight: '15px', minWidth: '20px', textAlign: 'center' }}></i>
+              {!sidebarCollapsed && <span>Configurações</span>}
             </div>
           </li>
         </ul>
