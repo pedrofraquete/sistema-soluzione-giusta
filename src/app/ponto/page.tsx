@@ -39,25 +39,6 @@ export default function PontoDigital() {
   ]);
   const [hoursWorked, setHoursWorked] = useState('05:32');
 
-  const handleNavigation = (module: string) => {
-    const routes: { [key: string]: string } = {
-      'Dashboard': '/dashboard',
-      'Funcionários': '/funcionarios',
-      'Projetos': '/projetos',
-      'Financeiro': '/financeiro',
-      'Chat': '/chat',
-      'Ponto Digital': '/ponto',
-      'Documentos': '/documentos',
-      'Relatórios': '/relatorios',
-      'Gamificação': '/gamificacao',
-      'Configurações': '/configuracoes'
-    }
-    
-    if (routes[module]) {
-      window.location.href = routes[module]
-    }
-  };
-
   useEffect(() => {
     const updateClock = () => {
       const now = new Date();
