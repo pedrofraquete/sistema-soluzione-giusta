@@ -601,7 +601,7 @@ export default function DashboardPage() {
               </div>
             </li>
             <li className="nav-item">
-              <div className="nav-link" onClick={() => handleNavigation('Financeiro')}>
+              <div className="nav-link" onClick={() => window.location.href = '/financeiro'}>
                 <i className="fas fa-dollar-sign"></i>
                 <span>Financeiro</span>
                 <div className="notification-dot"></div>
