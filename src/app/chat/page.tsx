@@ -8,6 +8,25 @@ export default function ChatPage() {
   const [currentChat, setCurrentChat] = useState<string | null>(null)
   const [messageInput, setMessageInput] = useState('')
 
+  const handleNavigation = (module: string) => {
+    const routes: { [key: string]: string } = {
+      'Dashboard': '/dashboard',
+      'Funcionários': '/funcionarios',
+      'Projetos': '/projetos',
+      'Financeiro': '/financeiro',
+      'Chat': '/chat',
+      'Ponto Digital': '/ponto',
+      'Documentos': '/documentos',
+      'Relatórios': '/relatorios',
+      'Gamificação': '/gamificacao',
+      'Configurações': '/configuracoes'
+    }
+    
+    if (routes[module]) {
+      window.location.href = routes[module]
+    }
+  }
+
   interface Employee {
     id: string
     name: string
@@ -265,25 +284,25 @@ export default function ChatPage() {
         
         <ul style={{ listStyle: 'none', padding: '0 15px' }}>
           <li style={{ marginBottom: '8px' }}>
-            <div onClick={() => window.location.href = '/dashboard'} style={{ display: 'flex', alignItems: 'center', padding: '15px', color: 'rgba(255,255,255,0.8)', textDecoration: 'none', borderRadius: '12px', cursor: 'pointer', fontWeight: 500 }}>
+            <div onClick={() => handleNavigation('Dashboard')} style={{ display: 'flex', alignItems: 'center', padding: '15px', color: 'rgba(255,255,255,0.8)', textDecoration: 'none', borderRadius: '12px', cursor: 'pointer', fontWeight: 500 }}>
               <i className="fas fa-chart-pie" style={{ fontSize: '1.2rem', marginRight: '15px', minWidth: '20px', textAlign: 'center' }}></i>
               {!sidebarCollapsed && <span>Dashboard</span>}
             </div>
           </li>
           <li style={{ marginBottom: '8px' }}>
-            <div onClick={() => window.location.href = '/funcionarios'} style={{ display: 'flex', alignItems: 'center', padding: '15px', color: 'rgba(255,255,255,0.8)', textDecoration: 'none', borderRadius: '12px', cursor: 'pointer', fontWeight: 500 }}>
+            <div onClick={() => handleNavigation('Funcionários')} style={{ display: 'flex', alignItems: 'center', padding: '15px', color: 'rgba(255,255,255,0.8)', textDecoration: 'none', borderRadius: '12px', cursor: 'pointer', fontWeight: 500 }}>
               <i className="fas fa-users" style={{ fontSize: '1.2rem', marginRight: '15px', minWidth: '20px', textAlign: 'center' }}></i>
               {!sidebarCollapsed && <span>Funcionários</span>}
             </div>
           </li>
           <li style={{ marginBottom: '8px' }}>
-            <div onClick={() => window.location.href = '/projetos'} style={{ display: 'flex', alignItems: 'center', padding: '15px', color: 'rgba(255,255,255,0.8)', textDecoration: 'none', borderRadius: '12px', cursor: 'pointer', fontWeight: 500 }}>
+            <div onClick={() => handleNavigation('Projetos')} style={{ display: 'flex', alignItems: 'center', padding: '15px', color: 'rgba(255,255,255,0.8)', textDecoration: 'none', borderRadius: '12px', cursor: 'pointer', fontWeight: 500 }}>
               <i className="fas fa-project-diagram" style={{ fontSize: '1.2rem', marginRight: '15px', minWidth: '20px', textAlign: 'center' }}></i>
               {!sidebarCollapsed && <span>Projetos</span>}
             </div>
           </li>
           <li style={{ marginBottom: '8px' }}>
-            <div onClick={() => window.location.href = '/financeiro'} style={{ display: 'flex', alignItems: 'center', padding: '15px', color: 'rgba(255,255,255,0.8)', textDecoration: 'none', borderRadius: '12px', cursor: 'pointer', fontWeight: 500 }}>
+            <div onClick={() => handleNavigation('Financeiro')} style={{ display: 'flex', alignItems: 'center', padding: '15px', color: 'rgba(255,255,255,0.8)', textDecoration: 'none', borderRadius: '12px', cursor: 'pointer', fontWeight: 500 }}>
               <i className="fas fa-dollar-sign" style={{ fontSize: '1.2rem', marginRight: '15px', minWidth: '20px', textAlign: 'center' }}></i>
               {!sidebarCollapsed && <span>Financeiro</span>}
             </div>
@@ -293,6 +312,36 @@ export default function ChatPage() {
               <i className="fas fa-comments" style={{ fontSize: '1.2rem', marginRight: '15px', minWidth: '20px', textAlign: 'center' }}></i>
               {!sidebarCollapsed && <span>Chat</span>}
               <div style={{ position: 'absolute', top: '-2px', right: '8px', width: '8px', height: '8px', background: '#ef4444', borderRadius: '50%', border: '1px solid white' }}></div>
+            </div>
+          </li>
+          <li style={{ marginBottom: '8px' }}>
+            <div onClick={() => handleNavigation('Ponto Digital')} style={{ display: 'flex', alignItems: 'center', padding: '15px', color: 'rgba(255,255,255,0.8)', textDecoration: 'none', borderRadius: '12px', cursor: 'pointer', fontWeight: 500 }}>
+              <i className="fas fa-clock" style={{ fontSize: '1.2rem', marginRight: '15px', minWidth: '20px', textAlign: 'center' }}></i>
+              {!sidebarCollapsed && <span>Ponto Digital</span>}
+            </div>
+          </li>
+          <li style={{ marginBottom: '8px' }}>
+            <div onClick={() => handleNavigation('Documentos')} style={{ display: 'flex', alignItems: 'center', padding: '15px', color: 'rgba(255,255,255,0.8)', textDecoration: 'none', borderRadius: '12px', cursor: 'pointer', fontWeight: 500 }}>
+              <i className="fas fa-file-alt" style={{ fontSize: '1.2rem', marginRight: '15px', minWidth: '20px', textAlign: 'center' }}></i>
+              {!sidebarCollapsed && <span>Documentos</span>}
+            </div>
+          </li>
+          <li style={{ marginBottom: '8px' }}>
+            <div onClick={() => handleNavigation('Relatórios')} style={{ display: 'flex', alignItems: 'center', padding: '15px', color: 'rgba(255,255,255,0.8)', textDecoration: 'none', borderRadius: '12px', cursor: 'pointer', fontWeight: 500 }}>
+              <i className="fas fa-chart-bar" style={{ fontSize: '1.2rem', marginRight: '15px', minWidth: '20px', textAlign: 'center' }}></i>
+              {!sidebarCollapsed && <span>Relatórios</span>}
+            </div>
+          </li>
+          <li style={{ marginBottom: '8px' }}>
+            <div onClick={() => handleNavigation('Gamificação')} style={{ display: 'flex', alignItems: 'center', padding: '15px', color: 'rgba(255,255,255,0.8)', textDecoration: 'none', borderRadius: '12px', cursor: 'pointer', fontWeight: 500 }}>
+              <i className="fas fa-trophy" style={{ fontSize: '1.2rem', marginRight: '15px', minWidth: '20px', textAlign: 'center' }}></i>
+              {!sidebarCollapsed && <span>Gamificação</span>}
+            </div>
+          </li>
+          <li style={{ marginBottom: '8px' }}>
+            <div onClick={() => handleNavigation('Configurações')} style={{ display: 'flex', alignItems: 'center', padding: '15px', color: 'rgba(255,255,255,0.8)', textDecoration: 'none', borderRadius: '12px', cursor: 'pointer', fontWeight: 500 }}>
+              <i className="fas fa-cog" style={{ fontSize: '1.2rem', marginRight: '15px', minWidth: '20px', textAlign: 'center' }}></i>
+              {!sidebarCollapsed && <span>Configurações</span>}
             </div>
           </li>
         </ul>

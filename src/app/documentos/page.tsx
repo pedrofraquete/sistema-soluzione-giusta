@@ -20,6 +20,25 @@ export default function DocumentosPage() {
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
   const [showUploadModal, setShowUploadModal] = useState(false);
 
+  const handleNavigation = (module: string) => {
+    const routes: { [key: string]: string } = {
+      'Dashboard': '/dashboard',
+      'Funcionários': '/funcionarios',
+      'Projetos': '/projetos',
+      'Financeiro': '/financeiro',
+      'Chat': '/chat',
+      'Ponto Digital': '/ponto',
+      'Documentos': '/documentos',
+      'Relatórios': '/relatorios',
+      'Gamificação': '/gamificacao',
+      'Configurações': '/configuracoes'
+    }
+    
+    if (routes[module]) {
+      window.location.href = routes[module]
+    }
+  };
+
   const mockDocuments: Document[] = [
     {
       id: '1',
@@ -160,7 +179,7 @@ export default function DocumentosPage() {
         
         <ul style={{ listStyle: 'none', padding: '0 15px' }}>
           <li style={{ marginBottom: '8px' }}>
-            <div onClick={() => window.location.href = '/dashboard'} style={{
+            <div onClick={() => handleNavigation('Dashboard')} style={{
               display: 'flex',
               alignItems: 'center',
               padding: '15px',
@@ -175,7 +194,7 @@ export default function DocumentosPage() {
             </div>
           </li>
           <li style={{ marginBottom: '8px' }}>
-            <div onClick={() => window.location.href = '/funcionarios'} style={{
+            <div onClick={() => handleNavigation('Funcionários')} style={{
               display: 'flex',
               alignItems: 'center',
               padding: '15px',
@@ -190,7 +209,7 @@ export default function DocumentosPage() {
             </div>
           </li>
           <li style={{ marginBottom: '8px' }}>
-            <div onClick={() => window.location.href = '/projetos'} style={{
+            <div onClick={() => handleNavigation('Projetos')} style={{
               display: 'flex',
               alignItems: 'center',
               padding: '15px',
@@ -205,7 +224,7 @@ export default function DocumentosPage() {
             </div>
           </li>
           <li style={{ marginBottom: '8px' }}>
-            <div onClick={() => window.location.href = '/financeiro'} style={{
+            <div onClick={() => handleNavigation('Financeiro')} style={{
               display: 'flex',
               alignItems: 'center',
               padding: '15px',
@@ -231,7 +250,7 @@ export default function DocumentosPage() {
             </div>
           </li>
           <li style={{ marginBottom: '8px' }}>
-            <div onClick={() => window.location.href = '/chat'} style={{
+            <div onClick={() => handleNavigation('Chat')} style={{
               display: 'flex',
               alignItems: 'center',
               padding: '15px',
@@ -257,7 +276,7 @@ export default function DocumentosPage() {
             </div>
           </li>
           <li style={{ marginBottom: '8px' }}>
-            <div onClick={() => window.location.href = '/ponto'} style={{
+            <div onClick={() => handleNavigation('Ponto Digital')} style={{
               display: 'flex',
               alignItems: 'center',
               padding: '15px',

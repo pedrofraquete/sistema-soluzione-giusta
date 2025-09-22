@@ -10,6 +10,25 @@ export default function ProjectsPage() {
   const [tasks, setTasks] = useState<Task[]>([])
   const [filteredTasks, setFilteredTasks] = useState<Task[]>([])
 
+  const handleNavigation = (module: string) => {
+    const routes: { [key: string]: string } = {
+      'Dashboard': '/dashboard',
+      'Funcionários': '/funcionarios',
+      'Projetos': '/projetos',
+      'Financeiro': '/financeiro',
+      'Chat': '/chat',
+      'Ponto Digital': '/ponto',
+      'Documentos': '/documentos',
+      'Relatórios': '/relatorios',
+      'Gamificação': '/gamificacao',
+      'Configurações': '/configuracoes'
+    }
+    
+    if (routes[module]) {
+      window.location.href = routes[module]
+    }
+  };
+
   interface Task {
     id: number
     title: string

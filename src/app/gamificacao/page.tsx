@@ -53,6 +53,25 @@ interface Activity {
 
 export default function GamificacaoPage() {
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
+
+  const handleNavigation = (module: string) => {
+    const routes: { [key: string]: string } = {
+      'Dashboard': '/dashboard',
+      'Funcionários': '/funcionarios',
+      'Projetos': '/projetos',
+      'Financeiro': '/financeiro',
+      'Chat': '/chat',
+      'Ponto Digital': '/ponto',
+      'Documentos': '/documentos',
+      'Relatórios': '/relatorios',
+      'Gamificação': '/gamificacao',
+      'Configurações': '/configuracoes'
+    }
+    
+    if (routes[module]) {
+      window.location.href = routes[module]
+    }
+  };
   const [playerData, setPlayerData] = useState<PlayerData>({
     name: 'Pedro Fraquete',
     role: 'CEO • Líder da Revolução',
