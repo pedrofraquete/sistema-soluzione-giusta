@@ -245,9 +245,6 @@ export default function FinanceiroPage() {
         </div>
       `).join('')
     }
-    } catch (error) {
-      console.error('Erro ao carregar transações:', error)
-    }
   }
 
   const initializeCharts = () => {
