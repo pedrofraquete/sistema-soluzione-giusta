@@ -615,7 +615,7 @@ export default function DashboardPage() {
               </div>
             </li>
             <li className="nav-item">
-              <div className="nav-link" onClick={() => handleNavigation('Ponto Digital')}>
+              <div className="nav-link" onClick={() => window.location.href = '/ponto'}>
                 <i className="fas fa-clock"></i>
                 <span>Ponto Digital</span>
               </div>
