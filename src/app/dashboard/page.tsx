@@ -608,7 +608,7 @@ export default function DashboardPage() {
               </div>
             </li>
             <li className="nav-item">
-              <div className="nav-link" onClick={() => handleNavigation('Chat')}>
+              <div className="nav-link" onClick={() => window.location.href = '/chat'}>
                 <i className="fas fa-comments"></i>
                 <span>Chat</span>
                 <div className="notification-dot"></div>
