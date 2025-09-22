@@ -63,7 +63,11 @@ export default function DashboardPage() {
   }
 
   const handleNavigation = (module: string) => {
-    showNotification(`Navegando para: ${module}`, 'info')
+    if (module === 'Funcionários') {
+      window.location.href = '/funcionarios'
+    } else {
+      showNotification(`Navegando para: ${module}`, 'info')
+    }
   }
 
   const showQuickActions = () => {

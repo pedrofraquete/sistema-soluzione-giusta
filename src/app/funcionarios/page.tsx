@@ -193,7 +193,11 @@ export default function FuncionariosPage() {
   }
 
   const handleNavigation = (module: string) => {
-    alert(`Navegando para: ${module}\n\n(Em desenvolvimento)`)
+    if (module === 'Dashboard') {
+      window.location.href = '/dashboard'
+    } else {
+      alert(`Navegando para: ${module}\n\n(Em desenvolvimento)`)
+    }
   }
 
   // Estatísticas
